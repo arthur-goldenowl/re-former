@@ -1,0 +1,16 @@
+<h1>User Info</h1>
+
+<h2>Username</h2>
+<p><%= @user.username %></p>
+
+<h2>Email</h2>
+<p><%= @user.email %></p>
+
+<h2>Created at</h2>
+<p><%= @user.created_at %></p>
+
+<h2>Updated at</h2>
+<p><%= @user.updated_at %></p>
+
+<%= link_to "Edit User", edit_user_path(@user) %> |
+<%= link_to "Back to Users", users_path %>
