@@ -1,0 +1,33 @@
+<h1>New User</h1>
+
+<%# Purely HTML form %>
+<!--
+<form action="/users" method="post" accept-charset="UTF-8">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="text" name="user[username]" placeholder="Name">
+    <input type="text" name="user[email]" placeholder="Email">
+    <input type="password" name="user[password]" placeholder="Password">
+    <input type="submit" value="Create User">
+</form>
+-->
+
+<%# Railsy form with #form_tag %>
+
+<!--
+<%= form_tag users_path do %>
+  <%= text_field_tag :username, nil, placeholder: "Name" %>
+  <%= text_field_tag :email, nil, placeholder: "Email" %>
+  <%= password_field_tag :password, nil, placeholder: "Password" %>
+  <%= submit_tag "Create User" %>
+<% end %>
+-->
+
+<%# Railsy form with #form_with %>
+
+<%= form_with model: @user do |form| %>
+    <%=form.text_field :username, placeholder: "Name" %>
+    <%=form.text_field :email, placeholder: "Email" %>
+    <%=form.password_field :password, placeholder: "Password" %>
+    <%=form.submit "Create User" %>
+<% end %>
+
